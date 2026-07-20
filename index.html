@@ -6,6 +6,29 @@
 <title>JobBooker — Every lead answered in 60 seconds, booked in your calendar</title>
 <meta name="description" content="JobBooker is the AI front desk for roofing, HVAC and plumbing companies. Every lead answered in under 60 seconds, qualified, and booked — 24/7. Pilot: $99 first month.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f33'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='800' fill='%232563eb' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://getjobbooker.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getjobbooker.com/">
+<meta property="og:title" content="JobBooker — Every lead answered in 60 seconds, booked in your calendar">
+<meta property="og:description" content="AI front desk for roofing, HVAC and plumbing companies. Every lead answered in under 60 seconds, qualified, and booked — 24/7. Pilot: $99 first month.">
+<meta property="og:image" content="https://getjobbooker.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JobBooker — Every lead answered in 60 seconds, booked in your calendar">
+<meta name="twitter:description" content="AI front desk for roofing, HVAC and plumbing companies. Every lead answered, qualified, and booked — 24/7.">
+<meta name="twitter:image" content="https://getjobbooker.com/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "JobBooker",
+  "url": "https://getjobbooker.com/",
+  "description": "AI front desk for roofing, HVAC and plumbing companies. Every lead answered in under 60 seconds, qualified, and booked into your calendar — 24/7.",
+  "provider": {"@type": "Organization", "name": "JobBooker", "url": "https://getjobbooker.com/", "email": "ben@jobbooker-team.com"},
+  "serviceType": "AI lead answering and booking service",
+  "areaServed": "US",
+  "offers": {"@type": "Offer", "name": "Pilot month", "price": "99", "priceCurrency": "USD", "description": "First month pilot, then $500/month, month-to-month."}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -149,6 +172,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 footer a{color:#cbd5e1;text-decoration:none}
 footer a:hover{color:#fff}
 
+/* LEAD FORM */
+.audit-card{max-width:640px;margin:36px auto 0;background:#fff;border-radius:20px;padding:34px;text-align:left;box-shadow:var(--shadow-lg)}
+.audit-card .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.audit-card label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:14px 0 6px}
+.audit-card input,.audit-card select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:15px;color:var(--ink);background:#fff}
+.audit-card input:focus,.audit-card select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.audit-card button.btn{width:100%;margin-top:22px;border:none;cursor:pointer;font:inherit}
+.audit-card button.btn:disabled{opacity:.6;cursor:default}
+.audit-note{font-size:13px;color:var(--grey2);margin-top:12px;text-align:center}
+.audit-note a{color:var(--blue)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-success{text-align:center;padding:30px 10px;color:var(--ink)}
+.form-success b{display:block;font-size:22px;margin-bottom:10px;color:var(--green)}
+
 @media(max-width:900px){
   h1{font-size:36px}
   .hero .wrap{grid-template-columns:1fr;gap:44px}
@@ -158,6 +195,8 @@ footer a:hover{color:#fff}
   .calc-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
   .nav-links a:not(.btn){display:none}
+  .audit-card{padding:24px}
+  .audit-card .frow{grid-template-columns:1fr}
   section{padding:64px 0}
 }
 </style>
@@ -173,7 +212,7 @@ footer a:hover{color:#fff}
       <a href="#roi">ROI</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="btn" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Free audit</a>
+      <a class="btn" href="#audit">Free audit</a>
     </div>
   </div>
 </nav>
@@ -185,7 +224,7 @@ footer a:hover{color:#fff}
       <h1>Your leads are calling your competitors.<br><span class="accent">We answer first.</span></h1>
       <p class="lead">JobBooker is an AI front desk that answers every lead in under 60 seconds, qualifies it, and books it straight into your calendar. 24/7, no new hires.</p>
       <div class="hero-ctas">
-        <a class="btn btn-lg" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Get the free 10-lead audit →</a>
+        <a class="btn btn-lg" href="#audit">Get the free 10-lead audit →</a>
         <a class="btn btn-lg btn-ghost" href="#demo">See it work</a>
       </div>
       <div class="hero-stats">
@@ -329,7 +368,7 @@ footer a:hover{color:#fff}
           <li>Monthly result report (answered, qualified, booked)</li>
           <li>Month-to-month, no setup fee</li>
         </ul>
-        <a class="btn" style="width:100%;text-align:center" href="mailto:ben@jobbooker-team.com?subject=Pilot%20spot%20request&body=Company%3A%0AWebsite%3A%0ATrade%3A%0A">Claim a pilot spot →</a>
+        <a class="btn" style="width:100%;text-align:center" href="#audit" data-interest="Pilot spot — $99 first month">Claim a pilot spot →</a>
       </div>
       <div class="price-card">
         <h3>Standard</h3>
@@ -386,13 +425,46 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="final">
+<section class="final" id="audit">
   <div class="wrap">
     <span class="eyebrow">Free audit</span>
     <h2>See what your last 10 leads were worth</h2>
-    <p class="lead">Send us where your leads come from. We'll show you how fast they were answered, what the AI would have caught, and the math for your business — in a 3-minute video, within 48 hours. No call, no meeting.</p>
-    <div style="margin-top:32px">
-      <a class="btn btn-lg" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Request the free audit →</a>
+    <p class="lead">Tell us where your leads come from. We'll show you how fast they were answered, what the AI would have caught, and the math for your business — in a 3-minute video, within 48 hours. No call, no meeting.</p>
+    <div class="audit-card">
+      <form id="leadForm">
+        <div class="frow">
+          <div>
+            <label for="fName">Your name</label>
+            <input id="fName" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="fCompany">Company</label>
+            <input id="fCompany" name="company" autocomplete="organization" required>
+          </div>
+        </div>
+        <div class="frow">
+          <div>
+            <label for="fEmail">Email</label>
+            <input id="fEmail" type="email" name="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="fPhone">Phone</label>
+            <input id="fPhone" type="tel" name="phone" autocomplete="tel">
+          </div>
+        </div>
+        <label for="fWebsite">Website</label>
+        <input id="fWebsite" type="url" name="website" placeholder="https://">
+        <label for="fSources">Where do your leads come from?</label>
+        <input id="fSources" name="lead_sources" placeholder="Google LSA, Angi, Thumbtack, website forms…">
+        <label for="fInterest">I'm interested in</label>
+        <select id="fInterest" name="interest">
+          <option>Free 10-lead audit</option>
+          <option>Pilot spot — $99 first month</option>
+        </select>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-lg" type="submit" id="leadSubmit">Request the free audit →</button>
+        <div class="audit-note" id="formMsg">Everything over email. No sales calls, no spam.</div>
+      </form>
     </div>
     <p class="small" style="margin-top:18px;color:#7d8fa5">Pilot program: 3 companies per trade. $99 first month, month-to-month.</p>
   </div>
@@ -474,6 +546,36 @@ function calc(){
 }
 ['rLeads','rJob','rClose','rMiss'].forEach(id => $(id).addEventListener('input', calc));
 calc();
+
+// ---------- Lead form ----------
+const leadForm = $('leadForm');
+leadForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = $('leadSubmit'), msg = $('formMsg');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  const data = Object.fromEntries(new FormData(leadForm));
+  data._subject = 'JobBooker lead: ' + (data.company || data.name) + ' — ' + data.interest;
+  data._template = 'table';
+  data._captcha = 'false';
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/ben@jobbooker-team.com', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('submit failed');
+    leadForm.innerHTML = '<div class="form-success"><b>Got it — you\'re in the queue.</b>We\'ll reply within 48 hours with your audit video. Everything happens over email from here.</div>';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Request the free audit →';
+    msg.innerHTML = 'Something went wrong — email us directly at <a href="mailto:ben@jobbooker-team.com">ben@jobbooker-team.com</a>';
+  }
+});
+// Pilot CTA presets the interest dropdown
+document.querySelectorAll('a[data-interest]').forEach(a =>
+  a.addEventListener('click', () => { $('fInterest').value = a.dataset.interest; })
+);
 </script>
 </body>
 </html>
