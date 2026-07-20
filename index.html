@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JobBooker — Every lead answered in 60 seconds, booked in your calendar</title>
 <meta name="description" content="JobBooker is the AI front desk for roofing, HVAC and plumbing companies. Every lead answered in under 60 seconds, qualified, and booked — 24/7. Pilot: $99 first month.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f33'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='800' fill='%232563eb' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -127,6 +128,8 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:44px;b
 .cmp tr:last-child td{border-bottom:none}
 .cmp .x{color:var(--red);font-weight:700}
 .cmp .y{color:var(--green);font-weight:700}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp-wrap .cmp{min-width:640px}
 
 /* FAQ */
 .faq{max-width:760px;margin:44px auto 0}
@@ -352,6 +355,7 @@ footer a:hover{color:#fff}
       <span class="eyebrow">Compare</span>
       <h2>Your other options — and what they really do</h2>
     </div>
+    <div class="cmp-wrap">
     <table class="cmp">
       <tr><th></th><th class="us">JobBooker</th><th>Answering service</th><th>Enterprise AI tools</th><th>Voicemail</th></tr>
       <tr><td><b>Answers in &lt;60s, 24/7</b></td><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="x">No</td></tr>
@@ -361,6 +365,7 @@ footer a:hover{color:#fff}
       <tr><td><b>Works with Jobber / Housecall Pro</b></td><td class="us y">Yes</td><td class="x">Limited</td><td class="x">ServiceTitan-first</td><td class="y">—</td></tr>
       <tr><td><b>Price</b></td><td class="us">$99 pilot, $500/mo</td><td>$250–1,000/mo</td><td>$600–1,500/mo + annual</td><td>Free (and costs you jobs)</td></tr>
     </table>
+    </div>
   </div>
 </section>
 
