@@ -3,121 +3,472 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobBooker — Every lead answered in 60 seconds</title>
-<meta name="description" content="JobBooker answers every lead for your roofing, HVAC, or plumbing company in under 60 seconds, qualifies it, and books it into your calendar.">
+<title>JobBooker — Every lead answered in 60 seconds, booked in your calendar</title>
+<meta name="description" content="JobBooker is the AI front desk for roofing, HVAC and plumbing companies. Every lead answered in under 60 seconds, qualified, and booked — 24/7. Pilot: $99 first month.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#0f2a43; --blue:#1a6fd4; --grey:#5b6b7a; --bg:#f7f9fb; --line:#e3e9ef; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--navy); background:var(--bg); line-height:1.6; }
-  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
-  header { background:var(--navy); color:#fff; padding:56px 0 44px; }
-  .brand { font-weight:800; font-size:20px; letter-spacing:.3px; opacity:.95; }
-  h1 { font-size:36px; line-height:1.2; margin:18px 0 14px; font-weight:800; }
-  .sub { font-size:19px; opacity:.9; max-width:620px; }
-  .cta { display:inline-block; background:var(--blue); color:#fff; font-weight:700; font-size:17px; padding:14px 26px; border-radius:8px; text-decoration:none; margin-top:26px; }
-  .cta:hover { background:#155cb3; }
-  section { padding:40px 0; border-bottom:1px solid var(--line); }
-  h2 { font-size:24px; margin-bottom:14px; }
-  p { color:var(--grey); margin-bottom:12px; }
-  ul.steps, ul.forwho { list-style:none; }
-  ul.steps li, ul.forwho li { background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:12px; }
-  ul.steps strong, .price strong { color:var(--navy); }
-  .price { background:#fff; border:1px solid var(--line); border-radius:12px; padding:24px; }
-  .price .big { font-size:30px; font-weight:800; color:var(--navy); }
-  .faq dt { font-weight:700; margin-top:16px; }
-  .faq dd { color:var(--grey); margin:4px 0 0; }
-  footer { padding:28px 0 40px; color:var(--grey); font-size:14px; }
-  .proof { background:#fff; border-left:4px solid var(--blue); padding:14px 18px; border-radius:0 10px 10px 0; margin:14px 0; color:var(--grey); }
-  .proof strong { color:var(--navy); }
+:root{
+  --navy:#0b1f33; --navy2:#10293f; --blue:#2563eb; --blue-d:#1d4ed8; --cyan:#22d3ee;
+  --ink:#0f172a; --grey:#475569; --grey2:#64748b; --bg:#f6f8fb; --card:#ffffff;
+  --line:#e2e8f0; --green:#16a34a; --amber:#d97706; --red:#dc2626;
+  --shadow:0 10px 30px rgba(11,31,51,.08); --shadow-lg:0 24px 60px rgba(11,31,51,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.15}
+h1{font-size:52px;font-weight:900}
+h2{font-size:34px;font-weight:800;color:var(--navy)}
+h3{font-size:19px;font-weight:700;color:var(--navy)}
+p.lead{font-size:19px;color:#cbd5e1}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:#e0e9fd;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.center{text-align:center}
+.muted{color:var(--grey)}
+.small{font-size:13px;color:var(--grey2)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:900;font-size:20px;color:#fff;letter-spacing:-.02em}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:14.5px;font-weight:500}
+.nav-links a:hover{color:#fff}
+.btn{display:inline-block;background:var(--blue);color:#fff!important;font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;text-decoration:none;transition:.15s;box-shadow:0 6px 16px rgba(37,99,235,.35)}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn-lg{font-size:16.5px;padding:16px 30px;border-radius:12px}
+.btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35);box-shadow:none;color:#fff!important}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#0e2a45 55%,#0d3b66 100%);color:#fff;padding:84px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{margin:18px 0 20px}
+.hero h1 .accent{color:var(--cyan)}
+.hero p.lead{max-width:520px}
+.hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap}
+.hstat{border-left:3px solid var(--cyan);padding-left:14px}
+.hstat b{display:block;font-size:24px;font-weight:800;color:#fff}
+.hstat span{font-size:13px;color:#94a3b8}
+
+/* PHONE DEMO */
+.phone{background:#0f172a;border:1px solid rgba(255,255,255,.12);border-radius:26px;box-shadow:var(--shadow-lg);overflow:hidden;max-width:420px;margin-left:auto}
+.phone-head{display:flex;align-items:center;gap:12px;padding:16px 18px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08)}
+.phone-head .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.phone-head .t{font-size:14px;font-weight:600;color:#e2e8f0}
+.phone-head .s{font-size:12px;color:#7d8fa5}
+.chat{padding:20px 18px;display:flex;flex-direction:column;gap:10px;min-height:380px}
+.bubble{max-width:82%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.45;opacity:0;transform:translateY(8px);animation:msgIn .4s forwards}
+@keyframes msgIn{to{opacity:1;transform:none}}
+.b-in{align-self:flex-start;background:#1e293b;color:#e2e8f0;border-bottom-left-radius:4px}
+.b-out{align-self:flex-end;background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+.b-sys{align-self:center;background:rgba(34,211,238,.12);color:var(--cyan);font-size:12.5px;padding:7px 14px;border-radius:999px}
+.time{font-size:11px;color:#64748b;align-self:flex-end;margin-top:-6px}
+.typing{align-self:flex-start;display:flex;gap:5px;padding:12px 16px;background:#1e293b;border-radius:16px;border-bottom-left-radius:4px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#64748b;animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+
+/* STAT BAR */
+.statbar{background:var(--navy2);color:#fff;padding:44px 0;border-top:1px solid rgba(255,255,255,.06)}
+.statbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.sb b{display:block;font-size:34px;font-weight:900;color:var(--cyan)}
+.sb span{font-size:14px;color:#cbd5e1;display:block;margin-top:6px}
+.sb i{font-size:11.5px;color:#64748b;display:block;font-style:normal;margin-top:4px}
+
+/* CARDS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.card .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.card p{color:var(--grey);font-size:15px;margin-top:8px}
+.ico-red{background:#fee2e2}.ico-amber{background:#fef3c7}.ico-blue{background:#dbeafe}
+.num-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:15px;margin-bottom:14px}
+
+/* DEMO SECTION */
+.demo{background:var(--navy);color:#fff}
+.demo h2{color:#fff}
+.demo .muted{color:#94a3b8}
+
+/* CALC */
+.calc{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);padding:40px;margin-top:44px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.calc label{display:block;font-size:13.5px;font-weight:600;color:var(--navy);margin:18px 0 6px}
+.calc input[type=range]{width:100%;accent-color:var(--blue)}
+.calc .val{font-weight:800;color:var(--blue);font-size:15px}
+.result-box{background:var(--navy);color:#fff;border-radius:18px;padding:30px}
+.result-box .row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.result-box .row:last-child{border-bottom:none}
+.result-box .lab{font-size:14px;color:#94a3b8}
+.result-box .num{font-size:26px;font-weight:900}
+.num.red{color:#f87171}.num.green{color:#4ade80}.num.cyan{color:var(--cyan)}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px;max-width:900px;margin-left:auto;margin-right:auto}
+.price-card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow);position:relative}
+.price-card.featured{border-color:var(--blue);box-shadow:0 20px 50px rgba(37,99,235,.18)}
+.tag{position:absolute;top:-13px;left:28px;background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:.06em}
+.price-card .amount{font-size:42px;font-weight:900;color:var(--navy);margin:8px 0 2px}
+.price-card .per{font-size:14px;color:var(--grey2)}
+.price-card ul{list-style:none;margin:22px 0}
+.price-card li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:var(--grey)}
+.price-card li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+
+/* COMPARE */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:44px;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+.cmp th,.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.cmp th{background:var(--navy);color:#fff;font-size:14px}
+.cmp th.us{background:var(--blue)}
+.cmp td.us{background:#eff6ff;font-weight:600}
+.cmp tr:last-child td{border-bottom:none}
+.cmp .x{color:var(--red);font-weight:700}
+.cmp .y{color:var(--green);font-weight:700}
+
+/* FAQ */
+.faq{max-width:760px;margin:44px auto 0}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:22px;color:var(--blue);font-weight:400;transition:.2s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq .ans{padding:0 22px 18px;color:var(--grey);font-size:15px}
+
+/* FINAL CTA */
+.final{background:linear-gradient(150deg,#0d3b66,var(--navy));color:#fff;text-align:center}
+.final h2{color:#fff}
+.final .lead{color:#cbd5e1;max-width:640px;margin:16px auto 0}
+footer{background:var(--navy);color:#94a3b8;padding:36px 0;font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer a{color:#cbd5e1;text-decoration:none}
+footer a:hover{color:#fff}
+
+@media(max-width:900px){
+  h1{font-size:36px}
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .phone{margin:0 auto}
+  .statbar .wrap{grid-template-columns:repeat(2,1fr)}
+  .grid3{grid-template-columns:1fr}
+  .calc-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .nav-links a:not(.btn){display:none}
+  section{padding:64px 0}
+}
 </style>
 </head>
 <body>
 
-<header>
+<nav>
   <div class="wrap">
-    <div class="brand">JobBooker</div>
-    <h1>Your leads are calling your competitors.<br>We answer first.</h1>
-    <p class="sub">Every form fill, Google lead, and missed call gets an answer in under 60 seconds — qualified and booked straight into your calendar.</p>
-    <a class="cta" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Request the free audit →</a>
+    <div class="logo">Job<span>Booker</span></div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#roi">ROI</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Free audit</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For roofing, HVAC &amp; plumbing companies</span>
+      <h1>Your leads are calling your competitors.<br><span class="accent">We answer first.</span></h1>
+      <p class="lead">JobBooker is an AI front desk that answers every lead in under 60 seconds, qualifies it, and books it straight into your calendar. 24/7, no new hires.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-lg" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Get the free 10-lead audit →</a>
+        <a class="btn btn-lg btn-ghost" href="#demo">See it work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><b>&lt;60 sec</b><span>response time, every lead</span></div>
+        <div class="hstat"><b>24/7</b><span>nights, weekends, holidays</span></div>
+        <div class="hstat"><b>$99</b><span>pilot month, month-to-month</span></div>
+      </div>
+    </div>
+    <div class="phone" id="demo">
+      <div class="phone-head">
+        <div class="dot"></div>
+        <div>
+          <div class="t">JobBooker AI · live demo</div>
+          <div class="s">Simulated lead conversation — this is what your customers get</div>
+        </div>
+      </div>
+      <div class="chat" id="chat"></div>
+    </div>
   </div>
 </header>
 
-<section>
+<div class="statbar">
   <div class="wrap">
-    <h2>The problem</h2>
-    <p>You pay for leads: Google ads, LSA, Angi, Thumbtack, yard signs.</p>
-    <p>Then they arrive at 7pm, on weekends, or while your office is on another line — and nobody answers. Homeowners contact 3–5 contractors and book the first one that responds. Slow by an hour and the job is gone.</p>
-    <div class="proof"><strong>You don't have a lead problem. You have a response problem.</strong></div>
+    <div class="sb"><b>27%</b><span>of calls to home-service businesses go unanswered<i>Invoca call analytics</i></span></div>
+    <div class="sb"><b>100×</b><span>better contact odds answering in 5 vs 30 minutes<i>InsideSales / Oldroyd study</i></span></div>
+    <div class="sb"><b>85%</b><span>of missed callers never call back — they call the next company<i>Industry call data</i></span></div>
+    <div class="sb"><b>$162</b><span>average cost of ONE roofing lead on Google LSA<i>SearchLight 2026</i></span></div>
   </div>
-</section>
+</div>
 
-<section>
+<section id="problem">
   <div class="wrap">
-    <h2>What we install</h2>
-    <p>An AI front desk for your business, set up and managed for you:</p>
-    <ul class="steps">
-      <li><strong>1. Answers in under 60 seconds.</strong> Every new lead — web form, Google, Angi, missed call — gets an instant, natural reply by SMS and email.</li>
-      <li><strong>2. Qualifies.</strong> Asks the 3–5 questions you care about: job type, address, timeframe, urgency, budget range.</li>
-      <li><strong>3. Books.</strong> Qualified leads land straight in your calendar. Emergency jobs go to your phone immediately.</li>
-    </ul>
-    <p>It plugs into what you already use — your calendar, your CRM, your phone number. Nothing for your team to learn.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>What it costs</h2>
-    <div class="price">
-      <p class="big">$99 first month</p>
-      <p><strong>Pilot program</strong> (first 3 companies per trade): $99 for the first month, then $500/month. Month-to-month, no setup fee, cancel with one email.</p>
-      <p>One extra booked job per month usually pays for it several times over. If it doesn't produce, you cancel.</p>
+    <div class="center">
+      <span class="eyebrow">The problem</span>
+      <h2>You don't have a lead problem.<br>You have a response problem.</h2>
+      <p class="muted" style="max-width:640px;margin:14px auto 0">You already pay Google, LSA, Angi and Thumbtack for leads. Then they arrive at 7pm, on weekends, or while your office is on another line — and die in the inbox.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico ico-red">📵</div>
+        <h3>Missed calls, missed jobs</h3>
+        <p>A homeowner with a leak calls three plumbers and books the first one who answers. If that call hits voicemail, 85% never call back — they book your competitor.</p>
+      </div>
+      <div class="card">
+        <div class="ico ico-amber">🕐</div>
+        <h3>Slow forms kill conversions</h3>
+        <p>Web leads answered within 5 minutes are 21× more likely to qualify than leads answered after 30. Most offices answer the next morning. The job is already gone.</p>
+      </div>
+      <div class="card">
+        <div class="ico ico-blue">🌙</div>
+        <h3>38% of demand is after hours</h3>
+        <p>Evenings, weekends, holidays — exactly when homeowners search. Offices relying on voicemail answer under 15% of those calls. That's a third of your market, gone.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="how" style="background:#fff">
   <div class="wrap">
-    <h2>Who this is for</h2>
-    <ul class="forwho">
-      <li>Roofing, HVAC, and plumbing companies in the US</li>
-      <li>Teams that spend money on leads every month</li>
-      <li>Owners who can't guarantee a sub-5-minute response 7 days a week</li>
-      <li>Companies that want more booked jobs without hiring another office person</li>
-    </ul>
+    <div class="center">
+      <span class="eyebrow">How it works</span>
+      <h2>An AI front desk, installed and managed for you</h2>
+      <p class="muted" style="max-width:620px;margin:14px auto 0">It plugs into what you already use — your calendar, your CRM, your phone number. Nothing for your team to learn.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="num-badge">1</div>
+        <h3>Answers in under 60 seconds</h3>
+        <p>Every new lead — web form, Google, Angi, missed call — gets an instant, natural reply by SMS and email. At 2pm or 2am.</p>
+      </div>
+      <div class="card">
+        <div class="num-badge">2</div>
+        <h3>Qualifies like your best office person</h3>
+        <p>Asks the 3–5 questions you care about: job type, address, timeframe, urgency, budget range. Follows your script — nothing else.</p>
+      </div>
+      <div class="card">
+        <div class="num-badge">3</div>
+        <h3>Books it into your calendar</h3>
+        <p>Qualified leads land straight in your schedule. Emergencies go to your phone immediately. You get a clean summary of every conversation.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>See it work on your own leads</h2>
-    <p>Tell us where your leads come from and we'll run a free audit on your last 10: how fast they were answered, what the AI front desk would have caught, and the exact math for your business.</p>
-    <p>You get a 3-minute video and a one-page proposal in your inbox. No call, no meeting — everything runs over email.</p>
-    <a class="cta" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Request the free audit →</a>
+<section class="demo" id="demo-section">
+  <div class="wrap center">
+    <span class="eyebrow">See it work</span>
+    <h2>Watch a lead get booked at 9:47pm</h2>
+    <p class="muted" style="max-width:620px;margin:14px auto 0">This is a simulation of the exact conversation your customers have. No app, no hold music, no "we'll call you back tomorrow".</p>
   </div>
 </section>
 
-<section>
+<section id="roi" style="background:#fff">
   <div class="wrap">
-    <h2>FAQ</h2>
-    <dl class="faq">
-      <dt>Is this a chatbot on my website?</dt>
-      <dd>No. It works across your forms, lead sources, and phone line. Your website can stay exactly as it is.</dd>
-      <dt>Do I need new software or a new phone number?</dt>
-      <dd>No. We plug into your existing calendar, CRM, and number.</dd>
-      <dt>What if the AI says something wrong?</dt>
-      <dd>It sticks to your qualification script, prices nothing, promises nothing, and hands anything unusual to a human — your office or ours.</dd>
-      <dt>Contract?</dt>
-      <dd>Month-to-month. Cancel with one email.</dd>
-    </dl>
+    <div class="center">
+      <span class="eyebrow">The math</span>
+      <h2>What slow response costs you per year</h2>
+      <p class="muted" style="margin-top:14px">Move the sliders to your numbers. Industry default: 27% of leads never answered.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-grid">
+        <div>
+          <label>Leads per month (calls + forms): <span class="val" id="vLeads">30</span></label>
+          <input type="range" id="rLeads" min="5" max="200" value="30">
+          <label>Average job value: <span class="val" id="vJob">$8,000</span></label>
+          <input type="range" id="rJob" min="500" max="30000" step="500" value="8000">
+          <label>Close rate on answered leads: <span class="val" id="vClose">25%</span></label>
+          <input type="range" id="rClose" min="5" max="60" value="25">
+          <label>Leads you currently miss: <span class="val" id="vMiss">27%</span></label>
+          <input type="range" id="rMiss" min="5" max="70" value="27">
+        </div>
+        <div class="result-box">
+          <div class="row"><span class="lab">Jobs lost per month</span><span class="num red" id="rJobsLost">2.0</span></div>
+          <div class="row"><span class="lab">Revenue lost per year</span><span class="num red" id="rRevLost">$194,400</span></div>
+          <div class="row"><span class="lab">JobBooker cost per year</span><span class="num cyan" id="rCost">$6,099</span></div>
+          <div class="row"><span class="lab">Payback if it saves ONE job</span><span class="num green" id="rPayback">1.3×</span></div>
+        </div>
+      </div>
+      <p class="small center" style="margin-top:18px">Cost shown: $99 first month + $500/mo after. Lost revenue assumes every missed lead would close at your normal rate — in reality a share of them close <em>for someone else</em>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple, month-to-month, cancel with one email</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="tag">PILOT — FIRST 3 PER TRADE</div>
+        <h3>Pilot month</h3>
+        <div class="amount">$99</div>
+        <div class="per">first month · then $500/mo</div>
+        <ul>
+          <li>Full AI front desk, done for you</li>
+          <li>Every lead answered &lt;60s by SMS + email</li>
+          <li>Qualification script built around your business</li>
+          <li>Booking into your calendar + emergency escalation</li>
+          <li>Monthly result report (answered, qualified, booked)</li>
+          <li>Month-to-month, no setup fee</li>
+        </ul>
+        <a class="btn" style="width:100%;text-align:center" href="mailto:ben@jobbooker-team.com?subject=Pilot%20spot%20request&body=Company%3A%0AWebsite%3A%0ATrade%3A%0A">Claim a pilot spot →</a>
+      </div>
+      <div class="price-card">
+        <h3>Standard</h3>
+        <div class="amount">$2,500<span class="per"> setup</span></div>
+        <div class="per">+ $750/month after pilot program</div>
+        <ul>
+          <li>Everything in pilot</li>
+          <li>Multi-source coverage (LSA, Angi, Thumbtack, forms, missed calls)</li>
+          <li>CRM integration (Jobber, Housecall Pro, Google Calendar)</li>
+          <li>Priority support and tuning</li>
+          <li>Voice AI add-on available (+$500/mo)</li>
+        </ul>
+        <a class="btn btn-ghost" style="width:100%;text-align:center;color:var(--navy)!important;border-color:var(--line)" href="#faq">Read the FAQ first</a>
+      </div>
+    </div>
+    <p class="small center" style="margin-top:22px">One extra booked job per month usually pays for the service several times over. If it doesn't produce, cancel.</p>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Compare</span>
+      <h2>Your other options — and what they really do</h2>
+    </div>
+    <table class="cmp">
+      <tr><th></th><th class="us">JobBooker</th><th>Answering service</th><th>Enterprise AI tools</th><th>Voicemail</th></tr>
+      <tr><td><b>Answers in &lt;60s, 24/7</b></td><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="x">No</td></tr>
+      <tr><td><b>Qualifies &amp; books into calendar</b></td><td class="us y">Yes</td><td class="x">Takes messages</td><td class="y">Yes</td><td class="x">No</td></tr>
+      <tr><td><b>Month-to-month</b></td><td class="us y">Yes</td><td class="x">Often annual</td><td class="x">Annual contracts</td><td class="y">—</td></tr>
+      <tr><td><b>Setup done for you</b></td><td class="us y">Yes</td><td class="y">Mostly</td><td class="x">Self-serve + CSM</td><td class="y">—</td></tr>
+      <tr><td><b>Works with Jobber / Housecall Pro</b></td><td class="us y">Yes</td><td class="x">Limited</td><td class="x">ServiceTitan-first</td><td class="y">—</td></tr>
+      <tr><td><b>Price</b></td><td class="us">$99 pilot, $500/mo</td><td>$250–1,000/mo</td><td>$600–1,500/mo + annual</td><td>Free (and costs you jobs)</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Straight answers</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Is this a chatbot on my website?</summary><div class="ans">No. It works across your forms, lead sources, and phone line — Google LSA, Angi, Thumbtack, web forms, missed calls. Your website stays exactly as it is.</div></details>
+      <details><summary>Do I need new software or a new phone number?</summary><div class="ans">No. We plug into your existing calendar, CRM, and number. Works with Jobber, Housecall Pro, and plain Google Calendar.</div></details>
+      <details><summary>What if the AI says something wrong to a customer?</summary><div class="ans">It sticks to your qualification script — it prices nothing, promises nothing, and hands anything unusual to a human: your office or ours. Every conversation is logged and reviewable.</div></details>
+      <details><summary>Do I have to get on sales calls or meetings?</summary><div class="ans">No. Everything runs over email: the free audit, a 3-minute video of your results, the proposal, and onboarding via one form. No calls, no meetings.</div></details>
+      <details><summary>What does the free audit actually show?</summary><div class="ans">We take your last 10 leads and show how fast each was answered, what the AI would have caught, and the exact revenue math for your business. You judge it on your own numbers before paying anything.</div></details>
+      <details><summary>Contract?</summary><div class="ans">Month-to-month. Cancel with one email. No annual lock-in, no early-exit fees.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">Free audit</span>
+    <h2>See what your last 10 leads were worth</h2>
+    <p class="lead">Send us where your leads come from. We'll show you how fast they were answered, what the AI would have caught, and the math for your business — in a 3-minute video, within 48 hours. No call, no meeting.</p>
+    <div style="margin-top:32px">
+      <a class="btn btn-lg" href="mailto:ben@jobbooker-team.com?subject=Free%2010-lead%20audit&body=Company%3A%0AWebsite%3A%0AWhere%20do%20your%20leads%20come%20from%3F">Request the free audit →</a>
+    </div>
+    <p class="small" style="margin-top:18px;color:#7d8fa5">Pilot program: 3 companies per trade. $99 first month, month-to-month.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p><strong>JobBooker</strong> — the AI front desk for home-service companies.</p>
-    <p>Contact: <a href="mailto:ben@jobbooker-team.com">ben@jobbooker-team.com</a></p>
+    <div><b style="color:#fff">JobBooker</b> — the AI front desk for home-service companies.</div>
+    <div><a href="mailto:ben@jobbooker-team.com">ben@jobbooker-team.com</a></div>
   </div>
 </footer>
 
+<script>
+// ---------- Simulated chat demo ----------
+const script = [
+  {t:'sys', txt:'Tuesday · 9:47 PM'},
+  {t:'in',  txt:'Hi, my water heater is leaking into the garage. Can someone come out tomorrow?'},
+  {t:'typing'},
+  {t:'out', txt:'Hi! Sorry to hear that — we can definitely help. I can get you booked for tomorrow. Quick questions so the tech comes prepared: is it a tank or tankless unit?'},
+  {t:'in',  txt:'Tank, about 8 years old'},
+  {t:'typing'},
+  {t:'out', txt:'Got it. And what\'s the address for the visit?'},
+  {t:'in',  txt:'4211 Preston Rd, Celina TX'},
+  {t:'typing'},
+  {t:'out', txt:'Perfect. I have Thursday 8–10am or 10am–12pm with Marcus. Which works better?'},
+  {t:'in',  txt:'8am works'},
+  {t:'sys', txt:'✓ Booked · Thursday 8:00 AM · confirmation text sent · owner notified'},
+  {t:'out', txt:'Done — you\'re on the schedule for Thursday 8–10am. You\'ll get a confirmation text in a minute. Anything else I can help with tonight?'}
+];
+const chat = document.getElementById('chat');
+let si = 0;
+function addBubble(item){
+  const d = document.createElement('div');
+  if(item.t === 'typing'){
+    d.className = 'typing'; d.id = 'typing-ind';
+    d.innerHTML = '<i></i><i></i><i></i>';
+  } else {
+    d.className = 'bubble ' + (item.t==='in'?'b-in':item.t==='out'?'b-out':'b-sys');
+    d.textContent = item.txt;
+  }
+  chat.appendChild(d);
+  chat.scrollTop = chat.scrollHeight;
+  return d;
+}
+function playScript(){
+  chat.innerHTML = ''; si = 0;
+  function next(){
+    if(si >= script.length){ setTimeout(playScript, 6000); return; }
+    const item = script[si++];
+    if(item.t === 'typing'){
+      const ty = addBubble(item);
+      setTimeout(() => { ty.remove(); next(); }, 900);
+    } else {
+      addBubble(item);
+      setTimeout(next, item.t==='sys' ? 1200 : 1500);
+    }
+  }
+  next();
+}
+playScript();
+
+// ---------- ROI calculator ----------
+const $ = id => document.getElementById(id);
+function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+function calc(){
+  const leads = +$('rLeads').value, job = +$('rJob').value,
+        close = +$('rClose').value / 100, miss = +$('rMiss').value / 100;
+  $('vLeads').textContent = leads;
+  $('vJob').textContent = money(job);
+  $('vClose').textContent = $('rClose').value + '%';
+  $('vMiss').textContent = $('rMiss').value + '%';
+  const jobsLost = leads * miss * close;
+  const revLost = jobsLost * job * 12;
+  const cost = 99 + 500 * 11;
+  $('rJobsLost').textContent = jobsLost.toFixed(1);
+  $('rRevLost').textContent = money(revLost);
+  $('rCost').textContent = money(cost);
+  $('rPayback').textContent = (job / cost).toFixed(1) + '×';
+}
+['rLeads','rJob','rClose','rMiss'].forEach(id => $(id).addEventListener('input', calc));
+calc();
+</script>
 </body>
 </html>
