@@ -24,6 +24,25 @@ Last updated: **July 21, 2026**.
   personalized message through a separate one-lead Instantly campaign. Both
   provider payloads matched the approved copy, and both campaigns are now
   paused with no sender attached. The 244-lead bulk draft stayed inactive.
+- Same-day API recheck: both threads show only the original send event; no
+  reply, bounce, complaint, or STOP on either.
+- Day-4 (July 25) and day-10 (July 31) threaded follow-ups for both threads
+  are drafted in `.context/first-pilot-followups.md` — NOT sent; each requires
+  named authorization. Any reply/bounce/STOP kills that thread's follow-ups.
+- Batch 2 staged in `.context/pilot-batch-2.md`: five send candidates
+  (McKinzie and Son Plumbing, Direct Source Plumbing, Morales Roofers, Texas
+  Pride Plumbing, Fort Tex Metals & Roofing), all MX-resolving, zero
+  suppression/history, no Housecall Pro booking paths; three held for size
+  (Bert, StazOn, Arthur Hagar). NOT sent; requires named authorization.
+- All three Instantly mailboxes report warmup active, setup complete, score
+  100. Additional owned-inbox seed proofs for the two unused mailboxes remain
+  gated on explicit approval.
+- Demo assets captured in `.context/assets/` (home, sandbox, audit, and a
+  live sandbox session screenshot). One-page pilot intake form added at
+  backend `docs/pilot-intake-form.md`.
+- Housecall Pro import scoping recorded at backend
+  `docs/housecall-pro-integration.md`: webhook path is 1–2 days but gated to
+  the prospect's HCP MAX plan; email-parse fallback works on any plan.
 
 ## Deployed site behavior
 
@@ -118,6 +137,8 @@ Last updated: **July 21, 2026**.
 Monitor the two isolated threads for bounce, reply, complaint, or STOP events;
 the one-minute VPS suppression timer remains active. Answer any reply in
 writing, send nothing else without a new named authorization, and keep the
-244-lead draft inert. If a prospect accepts, run the real source, Calendar
-success/failure, acknowledgement, owner-alert, consent, and reporting
-acceptance checks.
+244-lead draft inert. On/after July 25, request authorization for the day-4
+follow-ups (or cancel per thread if a reply lands). Batch-2 candidates are
+staged for named authorization whenever approved. If a prospect accepts, run
+the real source, Calendar success/failure, acknowledgement, owner-alert,
+consent, and reporting acceptance checks using `docs/pilot-intake-form.md`.
