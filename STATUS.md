@@ -29,11 +29,13 @@ Last updated: **July 21, 2026**.
 - Day-4 (July 25) and day-10 (July 31) threaded follow-ups for both threads
   are drafted in `.context/first-pilot-followups.md` — NOT sent; each requires
   named authorization. Any reply/bounce/STOP kills that thread's follow-ups.
-- Batch 2 staged in `.context/pilot-batch-2.md`: five send candidates
-  (McKinzie and Son Plumbing, Direct Source Plumbing, Morales Roofers, Texas
-  Pride Plumbing, Fort Tex Metals & Roofing), all MX-resolving, zero
-  suppression/history, no Housecall Pro booking paths; three held for size
-  (Bert, StazOn, Arthur Hagar). NOT sent; requires named authorization.
+- Batch 2 sent July 21: Fort Tex delivered complete; Texas Pride queued
+  (sender daily limit, delivers next window). Incident: McKinzie, Morales,
+  and Direct Source went out with EMPTY bodies because Instantly's API strips
+  text from step bodies containing `<br>` tags (reproduced; newline bodies
+  are safe). Correction drafts staged in `.context/pilot-batch-2.md`,
+  awaiting approval. Stale Knox/Proactive Wave-1 lead records deleted to free
+  the 250-lead plan cap and prevent double-contact.
 - All three Instantly mailboxes report warmup active, setup complete, score
   100. Additional owned-inbox seed proofs for the two unused mailboxes remain
   gated on explicit approval.
