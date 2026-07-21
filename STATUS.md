@@ -15,8 +15,8 @@ Last updated: **July 21, 2026**.
 - One controlled seed from `ben@jobbooker-team.com` to Ben's owned Gmail inbox
   reached Inbox with authenticated headers and the full footer; no prospect
   message was sent.
-- The owned Gmail address sent a STOP reply and is now manually protected by
-  Instantly's workspace blocklist. Automatic reply ingestion remains unproven.
+- A real isolated campaign proved automatic STOP ingestion and workspace
+  suppression for both the reply From address and original contacted alias.
 
 ## Deployed site behavior
 
@@ -62,11 +62,11 @@ Last updated: **July 21, 2026**.
   Inbox one second later. SPF, DKIM, and DMARC passed; the website, ad
   disclosure, supplied Varna address, and STOP text rendered intact with no
   unresolved variables. The campaign remained inactive with no sender account.
-- The threaded STOP test exposed a real automation gap: Instantly did not
-  surface the non-campaign preview reply or add suppression during the
-  two-minute observation. Manual blocklist creation succeeded, and a controlled
-  campaign import then returned `Lead is in blocklist`; no lead or send was
-  created.
+- The preview test exposed that non-campaign replies were not reliable Unibox
+  input. A real one-message campaign then passed: Gmail replied STOP, Instantly
+  recorded the event, and the scheduled VPS timer automatically blocked both
+  the reply address and contacted alias. Fresh imports of both returned
+  `Lead is in blocklist.`
 
 ## Deployment
 
@@ -75,16 +75,16 @@ Last updated: **July 21, 2026**.
 - The concurrent reminder/review commit on `origin/main` was merged and its
   capability retained only behind the onboarding label.
 - The backend pilot-ready branch is merged and pushed to the private agency
-  repo's `main`. VPS API, outbox worker, reminder timer, and daily 90-day PII
-  purge timer are active; production DB schema is version 4 with WAL and
-  foreign keys.
+  repo's `main`. VPS API, outbox worker, reminder timer, daily 90-day PII purge,
+  and one-minute outreach opt-out timer are active; production DB schema is
+  version 4 with WAL and foreign keys.
 - Verified pre-migration backup:
   `/opt/jobbooker/backups/jobbooker.db.pre-pilot-ready-20260721T121600Z`.
 
 ## Remaining activation blockers
 
-- Outreach STOP replies need deterministic ingestion into the workspace-wide
-  blocklist. The blocklist itself is verified; the automatic handoff is not.
+- Any additional sending mailbox needs its own owned-inbox seed/reply proof
+  before it can be attached.
 - A real Google Calendar event cannot be proven until the first pilot supplies
   approved credentials, calendar, timezone, ZIPs, notice, duration, horizon,
   and escalation recipient.
@@ -96,8 +96,8 @@ Last updated: **July 21, 2026**.
 
 ## Next exact step
 
-Restore read access to the JobBooker sender mailbox and connect STOP replies to
-Instantly's global blocklist, then retest through an isolated campaign thread.
-Keep the prospect campaign paused. After that gate passes, seek the first pilot
-in writing and run the real source, Calendar success/failure, acknowledgement,
-owner-alert, consent, and reporting acceptance checks.
+Recheck the four staged recipients against live suppression, bounce history,
+and current fit, then seek explicit named-recipient approval. Send only through
+personalized one-lead threads on the verified sender; keep the 244-lead campaign
+paused. After a written yes, run the real source, Calendar success/failure,
+acknowledgement, owner-alert, consent, and reporting acceptance checks.
