@@ -12,6 +12,9 @@ Last updated: **July 21, 2026**.
   month-to-month, for the first three pilot companies per trade.**
 - Instantly campaign remains at status `0` and is **not sending**. Its three
   steps now use the privacy-first audit/managed-recovery copy and retain STOP.
+- One controlled seed from `ben@jobbooker-team.com` to Ben's owned Gmail inbox
+  reached Inbox with authenticated headers and the full footer; no prospect
+  message was sent.
 
 ## Deployed site behavior
 
@@ -53,6 +56,10 @@ Last updated: **July 21, 2026**.
   auth. Calendar-unavailable smoke returned an honest no-booking/no-alert-recipient
   response. The two exact fake smoke leads and their 20 messages were then
   removed; no bookings/deliveries existed and the DB quick check remained OK.
+- The July 21 controlled outreach seed was provider-accepted and reached Gmail
+  Inbox one second later. SPF, DKIM, and DMARC passed; the website, ad
+  disclosure, supplied Varna address, and STOP text rendered intact with no
+  unresolved variables. The campaign remained inactive with no sender account.
 
 ## Deployment
 
