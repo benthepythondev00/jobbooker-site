@@ -63,6 +63,15 @@ Last updated: **July 21, 2026**.
   (HTTP 202) — covers Bing, Yahoo, Yandex, Naver, Seznam. Brave Search and
   DuckDuckGo accept no submissions (crawl-based). Google Search Console
   verification + sitemap submission remains a manual account step.
+- Trade landing pages live July 21: /roofing.html, /hvac.html,
+  /plumbing.html — trade-specific pain points, playbook, pricing, FAQ,
+  per-page Service JSON-LD, added to sitemap, IndexNow-pushed (HTTP 200),
+  linked from the index footer. Fixed a plain-list contrast bug and added
+  stylesheet cache-busting (styles.css?v=2). Site checks extended to all
+  six pages and pass; browser-tested desktop and 390px.
+- Demo video recorded: `.context/assets/jobbooker-sandbox-demo.mp4` (41s,
+  real plumbing sandbox conversation against the live production engine).
+  Usable in follow-ups and the site if wanted.
 - Note: site repo pushes must target `main` directly (`git push origin
   HEAD:main`); the local feature branch is not what GitHub Pages builds.
 
