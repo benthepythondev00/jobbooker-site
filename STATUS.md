@@ -49,6 +49,16 @@ Last updated: **July 21, 2026**.
 - Housecall Pro import scoping recorded at backend
   `docs/housecall-pro-integration.md`: webhook path is 1–2 days but gated to
   the prospect's HCP MAX plan; email-parse fallback works on any plan.
+  **Implemented July 21** (backend `fecef59`): `POST /webhooks/housecallpro/{slug}`
+  with HMAC verification and idempotent intake; 38 backend tests pass.
+  Inactive until a client supplies a signing secret.
+- Reply playbook staged at `.context/reply-playbook.md` (interested, price,
+  skeptic, not-interested, STOP, bounce, HCP scenarios).
+- Batch-2 day-4 (Jul 25) and day-10 (Jul 31) follow-ups staged at
+  `.context/batch-2-followups.md` — NOT sent; named authorization required.
+- Thread monitoring automated: backend `tools/monitor_threads.py` checks all
+  7 threads daily at 09:00 via cron, logs to `data/thread-monitor.jsonl` and
+  `data/thread-monitor.log`; first run all-clear.
 
 ## Deployed site behavior
 
