@@ -17,6 +17,10 @@ Last updated: **July 21, 2026**.
   message was sent.
 - A real isolated campaign proved automatic STOP ingestion and workspace
   suppression for both the reply From address and original contacted alias.
+- Live revalidation narrowed the personal send shortlist to Knox Roofing and
+  Proactive Air Conditioning. Clean Air Services and Red's Services Group are
+  held because their current booking paths use Housecall Pro, which JobBooker
+  does not advertise as a native integration.
 
 ## Deployed site behavior
 
@@ -67,6 +71,12 @@ Last updated: **July 21, 2026**.
   recorded the event, and the scheduled VPS timer automatically blocked both
   the reply address and contacted alias. Fresh imports of both returned
   `Lead is in blocklist.`
+- The four staged recipients were re-read live. Each has one untouched active
+  record in the 244-lead draft, zero historical email/contact/bounce/
+  unsubscribe evidence, no exact-address or domain suppression match, a
+  current public address on its official site, and resolving MX. Instantly has
+  no verification result for them, so the checks do not claim guaranteed
+  deliverability. Only Knox and Proactive remain eligible for the send gate.
 
 ## Deployment
 
@@ -96,8 +106,9 @@ Last updated: **July 21, 2026**.
 
 ## Next exact step
 
-Recheck the four staged recipients against live suppression, bounce history,
-and current fit, then seek explicit named-recipient approval. Send only through
-personalized one-lead threads on the verified sender; keep the 244-lead campaign
-paused. After a written yes, run the real source, Calendar success/failure,
-acknowledgement, owner-alert, consent, and reporting acceptance checks.
+Obtain explicit approval naming Knox Roofing (`info@knoxroofingpros.com`) and/or
+Proactive Air Conditioning (`info@proactiveairconditioning.com`). After a
+written yes, send only through a dedicated personalized one-lead Instantly
+thread on the verified sender; keep the 244-lead draft inert. If a prospect
+accepts, run the real source, Calendar success/failure, acknowledgement,
+owner-alert, consent, and reporting acceptance checks.
