@@ -59,6 +59,12 @@ Last updated: **July 21, 2026**.
 - Thread monitoring automated: backend `tools/monitor_threads.py` checks all
   7 threads daily at 09:00 via cron, logs to `data/thread-monitor.jsonl` and
   `data/thread-monitor.log`; first run all-clear.
+- IndexNow live: key file at site root, all three URLs pushed July 21
+  (HTTP 202) — covers Bing, Yahoo, Yandex, Naver, Seznam. Brave Search and
+  DuckDuckGo accept no submissions (crawl-based). Google Search Console
+  verification + sitemap submission remains a manual account step.
+- Note: site repo pushes must target `main` directly (`git push origin
+  HEAD:main`); the local feature branch is not what GitHub Pages builds.
 
 ## Deployed site behavior
 
