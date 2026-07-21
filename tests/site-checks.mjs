@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = file => fs.readFileSync(path.join(root, file), "utf8");
-const pages = ["index.html", "privacy.html", "terms.html", "roofing.html", "hvac.html", "plumbing.html"];
+const pages = ["index.html", "privacy.html", "terms.html", "roofing.html", "hvac.html", "plumbing.html", "roofing-speed-to-lead.html", "hvac-speed-to-lead.html", "plumbing-speed-to-lead.html"];
 const combined = pages.map(read).join("\n");
 
 function assert(condition, message) {
