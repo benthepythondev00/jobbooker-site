@@ -74,6 +74,21 @@ Last updated: **July 21, 2026**.
 - Demo video recorded: `.context/assets/jobbooker-sandbox-demo.mp4` (41s,
   real plumbing sandbox conversation against the live production engine).
   Usable in follow-ups and the site if wanted.
+- Speed-to-lead guides live July 21: /roofing-speed-to-lead.html,
+  /hvac-speed-to-lead.html, /plumbing-speed-to-lead.html — sourced benchmark
+  facts (Invoca July 2026, InsideSales historical, SearchLight Q1 2026),
+  Article JSON-LD, sitemap + IndexNow (HTTP 200), linked from footers.
+  Stylesheet bumped to v=3.
+- Jobber inbound path implemented (backend `04cca26`):
+  `POST /webhooks/jobber/{slug}` with X-Jobber-Hmac-SHA256 verification,
+  GraphQL fetch-after-notify, token refresh; 50 backend tests pass. Inactive
+  until Ben creates a Jobber Developer Center app (docs/jobber-integration.md)
+  and a client connects; Draft cap is 5 accounts.
+- Batch 3 (Houston) staged in `.context/pilot-batch-3-houston.md`: six
+  vetted candidates (Rose Roofing, EDR Roofing, Cooper Plumbing, Adams Air,
+  Hou-Tex Mechanical, Houston A/C Solutions), MX-verified, zero
+  history/suppression. NOT sent — named authorization required, and the
+  250-lead plan cap must be freed first (prune Wave-1 or upgrade).
 - Note: site repo pushes must target `main` directly (`git push origin
   HEAD:main`); the local feature branch is not what GitHub Pages builds.
 
