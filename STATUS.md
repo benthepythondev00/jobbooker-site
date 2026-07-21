@@ -10,7 +10,8 @@ Last updated: **July 21, 2026**.
   companies—not a generic AI receptionist.
 - Public offer everywhere: **$99 first month, then $500/month,
   month-to-month, for the first three pilot companies per trade.**
-- Instantly campaign remains **paused**.
+- Instantly campaign remains at status `0` and is **not sending**. Its three
+  steps now use the privacy-first audit/managed-recovery copy and retain STOP.
 
 ## Deployed site behavior
 
@@ -59,9 +60,10 @@ Last updated: **July 21, 2026**.
   `github.com/benthepythondev00/jobbooker-site` with custom domain/HTTPS.
 - The concurrent reminder/review commit on `origin/main` was merged and its
   capability retained only behind the onboarding label.
-- Backend branch `feat/pilot-ready-edge` is pushed to the private agency repo.
-  VPS API, outbox worker, reminder timer, and daily 90-day PII purge timer are
-  active; production DB schema is version 4 with WAL and foreign keys.
+- The backend pilot-ready branch is merged and pushed to the private agency
+  repo's `main`. VPS API, outbox worker, reminder timer, and daily 90-day PII
+  purge timer are active; production DB schema is version 4 with WAL and
+  foreign keys.
 - Verified pre-migration backup:
   `/opt/jobbooker/backups/jobbooker.db.pre-pilot-ready-20260721T121600Z`.
 
