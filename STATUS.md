@@ -29,14 +29,17 @@ Last updated: **July 21, 2026**.
 - Day-4 (July 25) and day-10 (July 31) threaded follow-ups for both threads
   are drafted in `.context/first-pilot-followups.md` — NOT sent; each requires
   named authorization. Any reply/bounce/STOP kills that thread's follow-ups.
-- Batch 2 sent July 21: Fort Tex delivered complete; Texas Pride queued
-  (sender daily limit, delivers next window). Incident: McKinzie, Morales,
+- Batch 2 sent July 21: all five delivered. Incident: McKinzie, Morales,
   and Direct Source first went out with EMPTY bodies because Instantly's API
   strips text from step bodies containing `<br>` tags (reproduced; newline
   bodies are safe). Corrections with the full approved copy were sent the
-  same day and verified complete (16:12–16:21 UTC); all campaigns paused and
-  detached. Stale Knox/Proactive Wave-1 lead records deleted to free the
-  250-lead plan cap and prevent double-contact.
+  same day and verified complete (16:12–16:21 UTC); Texas Pride (16:00:14Z)
+  and Fort Tex (15:59:22Z) delivered complete on first send. All batch-2 and
+  correction campaigns are paused with no sender attached. All seven active
+  threads (2 batch-1, 5 batch-2) show sent events only — zero replies,
+  bounces, complaints, or STOPs as of last check. Stale Knox/Proactive
+  Wave-1 lead records deleted to free the 250-lead plan cap and prevent
+  double-contact.
 - All three Instantly mailboxes report warmup active, setup complete, score
   100. Additional owned-inbox seed proofs for the two unused mailboxes remain
   gated on explicit approval.
