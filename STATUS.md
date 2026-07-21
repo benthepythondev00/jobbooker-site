@@ -31,11 +31,12 @@ Last updated: **July 21, 2026**.
   named authorization. Any reply/bounce/STOP kills that thread's follow-ups.
 - Batch 2 sent July 21: Fort Tex delivered complete; Texas Pride queued
   (sender daily limit, delivers next window). Incident: McKinzie, Morales,
-  and Direct Source went out with EMPTY bodies because Instantly's API strips
-  text from step bodies containing `<br>` tags (reproduced; newline bodies
-  are safe). Correction drafts staged in `.context/pilot-batch-2.md`,
-  awaiting approval. Stale Knox/Proactive Wave-1 lead records deleted to free
-  the 250-lead plan cap and prevent double-contact.
+  and Direct Source first went out with EMPTY bodies because Instantly's API
+  strips text from step bodies containing `<br>` tags (reproduced; newline
+  bodies are safe). Corrections with the full approved copy were sent the
+  same day and verified complete (16:12–16:21 UTC); all campaigns paused and
+  detached. Stale Knox/Proactive Wave-1 lead records deleted to free the
+  250-lead plan cap and prevent double-contact.
 - All three Instantly mailboxes report warmup active, setup complete, score
   100. Additional owned-inbox seed proofs for the two unused mailboxes remain
   gated on explicit approval.
