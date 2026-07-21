@@ -89,6 +89,14 @@ Last updated: **July 21, 2026**.
   Hou-Tex Mechanical, Houston A/C Solutions), MX-verified, zero
   history/suppression. NOT sent — named authorization required, and the
   250-lead plan cap must be freed first (prune Wave-1 or upgrade).
+- Competition matrix refreshed July 21 (backend `e250183`): key threats —
+  ServiceTitan "Speed to Lead" (June 2026, FSM-native sub-minute responder,
+  enterprise tiers only), LeadTruffle at $229/mo, Jobber Receptionist at
+  $29/mo. Wedge holds: no sub-$99 managed calendar booking for roofers, no
+  native sub-minute web-lead responder from Jobber/HCP, and fail-closed
+  booking honesty remains unduplicated. Site copy reviewed: no exclusivity
+  claims to correct. Revisit pricing pressure if LeadTruffle-style offers
+  reach roofing at <$300.
 - Note: site repo pushes must target `main` directly (`git push origin
   HEAD:main`); the local feature branch is not what GitHub Pages builds.
 
