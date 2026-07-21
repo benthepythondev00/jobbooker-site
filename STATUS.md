@@ -13,14 +13,17 @@ Last updated: **July 21, 2026**.
 - Instantly campaign remains at status `0` and is **not sending**. Its three
   steps now use the privacy-first audit/managed-recovery copy and retain STOP.
 - One controlled seed from `ben@jobbooker-team.com` to Ben's owned Gmail inbox
-  reached Inbox with authenticated headers and the full footer; no prospect
-  message was sent.
+  reached Inbox with authenticated headers and the full footer.
 - A real isolated campaign proved automatic STOP ingestion and workspace
   suppression for both the reply From address and original contacted alias.
 - Live revalidation narrowed the personal send shortlist to Knox Roofing and
   Proactive Air Conditioning. Clean Air Services and Red's Services Group are
   held because their current booking paths use Housecall Pro, which JobBooker
   does not advertise as a native integration.
+- Ben then explicitly authorized Knox and Proactive. Each was sent exactly one
+  personalized message through a separate one-lead Instantly campaign. Both
+  provider payloads matched the approved copy, and both campaigns are now
+  paused with no sender attached. The 244-lead bulk draft stayed inactive.
 
 ## Deployed site behavior
 
@@ -76,7 +79,13 @@ Last updated: **July 21, 2026**.
   unsubscribe evidence, no exact-address or domain suppression match, a
   current public address on its official site, and resolving MX. Instantly has
   no verification result for them, so the checks do not claim guaranteed
-  deliverability. Only Knox and Proactive remain eligible for the send gate.
+  deliverability. Knox and Proactive were the only eligible pair and have now
+  been sent once; Clean Air and Red's remain held.
+- Instantly recorded one campaign-send event for Knox at `14:45:40Z` and one
+  for Proactive at `14:59:10Z`. Each event's subject and normalized text body
+  matched the approved hashes exactly. Immediate checks showed no reply or
+  provider bounce signal; this is provider-send evidence, not independent
+  inbox-placement or human-receipt proof.
 
 ## Deployment
 
@@ -106,9 +115,9 @@ Last updated: **July 21, 2026**.
 
 ## Next exact step
 
-Obtain explicit approval naming Knox Roofing (`info@knoxroofingpros.com`) and/or
-Proactive Air Conditioning (`info@proactiveairconditioning.com`). After a
-written yes, send only through a dedicated personalized one-lead Instantly
-thread on the verified sender; keep the 244-lead draft inert. If a prospect
-accepts, run the real source, Calendar success/failure, acknowledgement,
-owner-alert, consent, and reporting acceptance checks.
+Monitor the two isolated threads for bounce, reply, complaint, or STOP events;
+the one-minute VPS suppression timer remains active. Answer any reply in
+writing, send nothing else without a new named authorization, and keep the
+244-lead draft inert. If a prospect accepts, run the real source, Calendar
+success/failure, acknowledgement, owner-alert, consent, and reporting
+acceptance checks.
