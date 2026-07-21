@@ -61,8 +61,10 @@ Last updated: **July 21, 2026**.
   `data/thread-monitor.log`; first run all-clear.
 - IndexNow live: key file at site root, all three URLs pushed July 21
   (HTTP 202) — covers Bing, Yahoo, Yandex, Naver, Seznam. Brave Search and
-  DuckDuckGo accept no submissions (crawl-based). Google Search Console
-  verification + sitemap submission remains a manual account step.
+  DuckDuckGo accept no submissions (crawl-based). Google Search Console verified
+  July 21 via HTML meta tag (property https://getjobbooker.com/) and
+  sitemap.xml submitted by Ben; the verification meta tag stays on the
+  homepage permanently. Search data appears in GSC within ~48h.
 - Trade landing pages live July 21: /roofing.html, /hvac.html,
   /plumbing.html — trade-specific pain points, playbook, pricing, FAQ,
   per-page Service JSON-LD, added to sitemap, IndexNow-pushed (HTTP 200),
