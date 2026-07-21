@@ -15,6 +15,8 @@ Last updated: **July 21, 2026**.
 - One controlled seed from `ben@jobbooker-team.com` to Ben's owned Gmail inbox
   reached Inbox with authenticated headers and the full footer; no prospect
   message was sent.
+- The owned Gmail address sent a STOP reply and is now manually protected by
+  Instantly's workspace blocklist. Automatic reply ingestion remains unproven.
 
 ## Deployed site behavior
 
@@ -60,6 +62,11 @@ Last updated: **July 21, 2026**.
   Inbox one second later. SPF, DKIM, and DMARC passed; the website, ad
   disclosure, supplied Varna address, and STOP text rendered intact with no
   unresolved variables. The campaign remained inactive with no sender account.
+- The threaded STOP test exposed a real automation gap: Instantly did not
+  surface the non-campaign preview reply or add suppression during the
+  two-minute observation. Manual blocklist creation succeeded, and a controlled
+  campaign import then returned `Lead is in blocklist`; no lead or send was
+  created.
 
 ## Deployment
 
@@ -76,6 +83,8 @@ Last updated: **July 21, 2026**.
 
 ## Remaining activation blockers
 
+- Outreach STOP replies need deterministic ingestion into the workspace-wide
+  blocklist. The blocklist itself is verified; the automatic handoff is not.
 - A real Google Calendar event cannot be proven until the first pilot supplies
   approved credentials, calendar, timezone, ZIPs, notice, duration, horizon,
   and escalation recipient.
@@ -87,9 +96,8 @@ Last updated: **July 21, 2026**.
 
 ## Next exact step
 
-Onboard the first pilot in writing, activate one real source plus its owner
-recipient, pass a real Google Calendar success and forced-failure check, then
-send one consented lead and confirm provider-backed acknowledgement within 60
-seconds of JobBooker receipt and a reconciled report. Keep Instantly paused
-until those real-client gates pass; campaign activation remains a separate
-explicit decision.
+Restore read access to the JobBooker sender mailbox and connect STOP replies to
+Instantly's global blocklist, then retest through an isolated campaign thread.
+Keep the prospect campaign paused. After that gate passes, seek the first pilot
+in writing and run the real source, Calendar success/failure, acknowledgement,
+owner-alert, consent, and reporting acceptance checks.
