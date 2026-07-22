@@ -88,7 +88,12 @@ Last updated: **July 21, 2026**.
   vetted candidates (Rose Roofing, EDR Roofing, Cooper Plumbing, Adams Air,
   Hou-Tex Mechanical, Houston A/C Solutions), MX-verified, zero
   history/suppression. NOT sent — named authorization required, and the
-  250-lead plan cap must be freed first (prune Wave-1 or upgrade).
+  250-lead plan cap must be freed first (prune Wave-1 or upgrade).  **Done July 22**: pruned 10 Wave-1
+  leads — the 2 held staged prospects (Clean Air, Red's), 2 test probes
+  (test-lead-format-check, probe-ua-check), and 6 previously excluded or
+  duplicate-pool leads (Silver Spur, J's, Bridges Air, Cowboy Cooling,
+  NexAir, Day & Night Air). Source data remains in the repo, so the prune
+  is recoverable. Batch 3 now has send capacity.
 - Competition matrix refreshed July 21 (backend `e250183`): key threats —
   ServiceTitan "Speed to Lead" (June 2026, FSM-native sub-minute responder,
   enterprise tiers only), LeadTruffle at $229/mo, Jobber Receptionist at
