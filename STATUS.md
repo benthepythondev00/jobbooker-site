@@ -1,6 +1,6 @@
 # JobBooker site — status
 
-Last updated: **July 21, 2026**.
+Last updated: **July 22, 2026**.
 
 ## Current state
 
@@ -193,13 +193,35 @@ Last updated: **July 21, 2026**.
   active yet. The sample client has no escalation recipient or review link.
 - There is no client-confirmed closed revenue, testimonial, logo, or case study.
 
+## Latest checkpoint (July 22, 2026 ~13:08 UTC)
+
+- What changed: live Instantly recheck of all 7 contacted threads.
+- Files touched: `data/thread-monitor.jsonl` (agency), this STATUS.
+- Commands run: `python3 tools/monitor_threads.py` in
+  `ai-frontdesk-agency` → exit 0, all clear.
+- Result: every thread still has only our sent events (ue_type=1). Zero
+  replies, bounces, complaints, or STOPs. Sent counts: Knox 1, Proactive 1,
+  McKinzie 2, Morales 2, Direct Source 2, Texas Pride 1, Fort Tex 1
+  (batch-2 empties + same-day corrections still the only extras).
+- Note: referenced drafts
+  `.context/first-pilot-followups.md`, `.context/batch-2-followups.md`, and
+  `.context/pilot-batch-3-houston.md` are **missing on disk** — day-4 and
+  Batch 3 auth packets drafted in chat on July 22; recreate those files
+  before any send.
+- Current blocker: no named authorization for day-4 follow-ups (due on/after
+  July 25) or for Houston Batch 3 first-touch sends.
+- Next exact step: keep monitoring; on July 25 re-run the monitor and, if
+  still silent, get named auth for day-4 only. Do not send Batch 3 until
+  candidates are re-vetted into a real staging file (partial lead rows only
+  for Rose/Cooper/Houston A/C; EDR/Adams/Hou-Tex not found in current CSVs).
+
 ## Next exact step
 
-Monitor the two isolated threads for bounce, reply, complaint, or STOP events;
+Monitor all seven Instantly threads for bounce, reply, complaint, or STOP;
 the one-minute VPS suppression timer remains active. Answer any reply in
 writing, send nothing else without a new named authorization, and keep the
 244-lead draft inert. On/after July 25, request authorization for the day-4
-follow-ups (or cancel per thread if a reply lands). Batch-2 candidates are
-staged for named authorization whenever approved. If a prospect accepts, run
-the real source, Calendar success/failure, acknowledgement, owner-alert,
+follow-ups (or cancel per thread if a reply lands). Batch 3 Houston still
+needs a complete staging file before any send auth. If a prospect accepts,
+run the real source, Calendar success/failure, acknowledgement, owner-alert,
 consent, and reporting acceptance checks using `docs/pilot-intake-form.md`.
