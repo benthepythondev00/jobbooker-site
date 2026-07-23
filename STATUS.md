@@ -94,6 +94,13 @@ Last updated: **July 22, 2026**.
   duplicate-pool leads (Silver Spur, J's, Bridges Air, Cowboy Cooling,
   NexAir, Day & Night Air). Source data remains in the repo, so the prune
   is recoverable. Batch 3 now has send capacity.
+- Batch 3 (Houston) SENDING July 22: Ben authorized `send them`; all six
+  one-lead campaigns created with verified plain-newline bodies and
+  activated (Rose 0adf88e9, EDR 9eea85c6, Cooper 5a6cb8e4, Adams a763184d,
+  Hou-Tex eb5b472d, Houston A/C 39449ca6). Queued `out_of_schedule` until
+  the 07:00-19:00 CT window opens (12:00 UTC); each sends once, then gets
+  paused and detached. Verify send events + body completeness after 12:00
+  UTC Jul 22, then update this section.
 - Competition matrix refreshed July 21 (backend `e250183`): key threats —
   ServiceTitan "Speed to Lead" (June 2026, FSM-native sub-minute responder,
   enterprise tiers only), LeadTruffle at $229/mo, Jobber Receptionist at
