@@ -1,6 +1,6 @@
 # JobBooker site — status
 
-Last updated: **July 22, 2026**.
+Last updated: **July 23, 2026**.
 
 ## Current state
 
@@ -27,8 +27,9 @@ Last updated: **July 22, 2026**.
 - Same-day API recheck: both threads show only the original send event; no
   reply, bounce, complaint, or STOP on either.
 - Day-4 (July 25) and day-10 (July 31) threaded follow-ups for both threads
-  are drafted in `.context/first-pilot-followups.md` — NOT sent; each requires
-  named authorization. Any reply/bounce/STOP kills that thread's follow-ups.
+  are drafted in private agency `.context/first-pilot-followups.md` — NOT
+  sent; each requires named authorization. Any reply/bounce/STOP kills that
+  thread's follow-ups.
 - Batch 2 sent July 21: all five delivered. Incident: McKinzie, Morales,
   and Direct Source first went out with EMPTY bodies because Instantly's API
   strips text from step bodies containing `<br>` tags (reproduced; newline
@@ -54,11 +55,12 @@ Last updated: **July 22, 2026**.
   Inactive until a client supplies a signing secret.
 - Reply playbook staged at `.context/reply-playbook.md` (interested, price,
   skeptic, not-interested, STOP, bounce, HCP scenarios).
-- Batch-2 day-4 (Jul 25) and day-10 (Jul 31) follow-ups staged at
-  `.context/batch-2-followups.md` — NOT sent; named authorization required.
+- Batch-2 day-4 (Jul 25) and day-10 (Jul 31) follow-ups staged at private
+  agency `.context/batch-2-followups.md` — NOT sent; named authorization
+  required.
 - Thread monitoring automated: backend `tools/monitor_threads.py` checks all
-  7 threads daily at 09:00 via cron, logs to `data/thread-monitor.jsonl` and
-  `data/thread-monitor.log`; first run all-clear.
+  **13** threads (7 batch-1/2 + 6 batch-3) daily at 09:00 via cron, logs to
+  `data/thread-monitor.jsonl` and `data/thread-monitor.log`.
 - IndexNow live: key file at site root, all three URLs pushed July 21
   (HTTP 202) — covers Bing, Yahoo, Yandex, Naver, Seznam. Brave Search and
   DuckDuckGo accept no submissions (crawl-based). Google Search Console verified
@@ -84,23 +86,16 @@ Last updated: **July 22, 2026**.
   GraphQL fetch-after-notify, token refresh; 50 backend tests pass. Inactive
   until Ben creates a Jobber Developer Center app (docs/jobber-integration.md)
   and a client connects; Draft cap is 5 accounts.
-- Batch 3 (Houston) staged in `.context/pilot-batch-3-houston.md`: six
-  vetted candidates (Rose Roofing, EDR Roofing, Cooper Plumbing, Adams Air,
-  Hou-Tex Mechanical, Houston A/C Solutions), MX-verified, zero
-  history/suppression. NOT sent — named authorization required, and the
-  250-lead plan cap must be freed first (prune Wave-1 or upgrade).  **Done July 22**: pruned 10 Wave-1
-  leads — the 2 held staged prospects (Clean Air, Red's), 2 test probes
-  (test-lead-format-check, probe-ua-check), and 6 previously excluded or
-  duplicate-pool leads (Silver Spur, J's, Bridges Air, Cowboy Cooling,
-  NexAir, Day & Night Air). Source data remains in the repo, so the prune
-  is recoverable. Batch 3 now has send capacity.
-- Batch 3 (Houston) SENDING July 22: Ben authorized `send them`; all six
-  one-lead campaigns created with verified plain-newline bodies and
-  activated (Rose 0adf88e9, EDR 9eea85c6, Cooper 5a6cb8e4, Adams a763184d,
-  Hou-Tex eb5b472d, Houston A/C 39449ca6). Queued `out_of_schedule` until
-  the 07:00-19:00 CT window opens (12:00 UTC); each sends once, then gets
-  paused and detached. Verify send events + body completeness after 12:00
-  UTC Jul 22, then update this section.
+- Batch 3 (Houston) capacity freed July 22: pruned 10 Wave-1 leads (Clean
+  Air, Red's, two test probes, and six excluded/duplicate-pool leads).
+  Source data remains in the agency repo. Six Houston first-touches then
+  sent July 23 (see Batch 3 sent note below).
+- Batch 3 (Houston) **sent** 2026-07-23 ~12:04–12:08 UTC: all six one-lead
+  campaigns delivered complete bodies with postal+STOP footer and $99→$500
+  offer (Rose, EDR, Cooper, Adams, Hou-Tex, Houston A/C). Verified July 23:
+  each has exactly one send event; campaigns paused (status 2) and sender
+  detached. Staging + follow-up copy live in private agency
+  `.context/pilot-batch-3-houston.md`. Day-4 for Batch 3 not before Jul 27.
 - Competition matrix refreshed July 21 (backend `e250183`): key threats —
   ServiceTitan "Speed to Lead" (June 2026, FSM-native sub-minute responder,
   enterprise tiers only), LeadTruffle at $229/mo, Jobber Receptionist at
@@ -200,35 +195,34 @@ Last updated: **July 22, 2026**.
   active yet. The sample client has no escalation recipient or review link.
 - There is no client-confirmed closed revenue, testimonial, logo, or case study.
 
-## Latest checkpoint (July 22, 2026 ~13:08 UTC)
+## Latest checkpoint (July 23, 2026 ~19:50 UTC)
 
-- What changed: live Instantly recheck of all 7 contacted threads.
-- Files touched: `data/thread-monitor.jsonl` (agency), this STATUS.
-- Commands run: `python3 tools/monitor_threads.py` in
-  `ai-frontdesk-agency` → exit 0, all clear.
-- Result: every thread still has only our sent events (ue_type=1). Zero
-  replies, bounces, complaints, or STOPs. Sent counts: Knox 1, Proactive 1,
-  McKinzie 2, Morales 2, Direct Source 2, Texas Pride 1, Fort Tex 1
-  (batch-2 empties + same-day corrections still the only extras).
-- Note: referenced drafts
-  `.context/first-pilot-followups.md`, `.context/batch-2-followups.md`, and
-  `.context/pilot-batch-3-houston.md` are **missing on disk** — day-4 and
-  Batch 3 auth packets drafted in chat on July 22; recreate those files
-  before any send.
-- Current blocker: no named authorization for day-4 follow-ups (due on/after
-  July 25) or for Houston Batch 3 first-touch sends.
-- Next exact step: keep monitoring; on July 25 re-run the monitor and, if
-  still silent, get named auth for day-4 only. Do not send Batch 3 until
-  candidates are re-vetted into a real staging file (partial lead rows only
-  for Rose/Cooper/Houston A/C; EDR/Adams/Hou-Tex not found in current CSVs).
+- What changed: site repo fast-forwarded to origin/main; recreated missing
+  outreach drafts in private agency `.context/`; verified Batch 3 send
+  events; paused + detached all six Batch 3 campaigns; extended monitor to
+  13 threads; live recheck all-clear.
+- Files touched (agency): `.context/first-pilot-followups.md`,
+  `.context/batch-2-followups.md`, `.context/pilot-batch-3-houston.md`,
+  `tools/monitor_threads.py`, `data/thread-monitor.jsonl`. Site: this STATUS.
+- Commands run: `git pull --ff-only origin main` (site); Instantly API
+  campaign/email checks; pause+detach Batch 3; `python3 tools/monitor_threads.py`
+  → exit 0, **13 threads all clear**.
+- Batch 3 result: 6/6 first-touch sent 12:04–12:08Z Jul 23; status 2; no
+  sender attached; zero replies/bounces/STOPs so far.
+- Drafts location (private only — not on public GitHub Pages site):
+  `ai-frontdesk-agency/.context/{first-pilot-followups,batch-2-followups,pilot-batch-3-houston}.md`
+- Current blocker: no named authorization for batch-1/2 day-4 follow-ups
+  (due on/after July 25). Batch 3 day-4 not before July 27.
+- Next exact step: keep monitoring all 13; on July 25 re-run monitor and, if
+  still silent on batch-1/2, request named auth for day-4 only.
 
 ## Next exact step
 
-Monitor all seven Instantly threads for bounce, reply, complaint, or STOP;
+Monitor all **13** Instantly threads for bounce, reply, complaint, or STOP;
 the one-minute VPS suppression timer remains active. Answer any reply in
 writing, send nothing else without a new named authorization, and keep the
-244-lead draft inert. On/after July 25, request authorization for the day-4
-follow-ups (or cancel per thread if a reply lands). Batch 3 Houston still
-needs a complete staging file before any send auth. If a prospect accepts,
-run the real source, Calendar success/failure, acknowledgement, owner-alert,
-consent, and reporting acceptance checks using `docs/pilot-intake-form.md`.
+244-lead draft inert. On/after July 25, request authorization for batch-1/2
+day-4 follow-ups (or cancel per thread if a reply lands). Batch 3 day-4 is
+not before July 27. If a prospect accepts, run the real source, Calendar
+success/failure, acknowledgement, owner-alert, consent, and reporting
+acceptance checks using `docs/pilot-intake-form.md`.
